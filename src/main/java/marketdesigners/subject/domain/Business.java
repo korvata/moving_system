@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashMap;
 
 @Entity
 @Getter @Setter
@@ -29,8 +30,9 @@ public class Business {
     @Column(name = "employee_num")
     private int employeeNum;            //직원수
 
+    @Convert(converter = CarNumConverter.class)
     @Column(name = "car_num")
-    private int carNum;                 //차량수
+    private HashMap<CarNum, Integer> carNum;                 //차량수
 
-    private Status status;              //매칭가능여부
+    private Status status;                                   //매칭가능여부
 }
