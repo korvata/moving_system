@@ -48,4 +48,20 @@ public class Feedback {
 
     @Column(name = "contents")
     private String contents;                     //피드백 내용
+
+    /**
+     * 생성 메서드
+     */
+    public Feedback (User user, Status infoAgree, Satisfaction proSatisfaction, Satisfaction priceSatisfaction, Satisfaction mannerSatisfaction, Status revisit, int price, LocalDateTime movingDate, LocalDateTime feedbackDate, String contents) {
+        this.user = user;
+        this.infoAgree = infoAgree;
+        this.proSatisfaction = proSatisfaction;
+        this.priceSatisfaction = priceSatisfaction;
+        this.mannerSatisfaction = mannerSatisfaction;
+        this.revisit = revisit;
+        this.price = price;
+        this.movingDate = movingDate;
+        this.feedbackDate = feedbackDate;
+        this.contents = contents;
+    }
 }
