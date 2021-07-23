@@ -45,4 +45,19 @@ public class Registration {
     @Column(name = "market_agree_status")
     private Status marketAgreeStatus;   //마케팅 정보수신 동의여부
 
+    /**
+     * 생성 메서드
+     */
+    public Registration(User user, String startAddress, int startFloor, String endAddress, int endFloor, LocalDateTime movingDate, Status movingStatus, Status useAgreeStatus, Status thirdAgreeStatus, Status marketAgreeStatus) {
+        this.user = user;
+        this.startAddress = startAddress;
+        this.startFloor = startFloor;
+        this.endAddress = endAddress;
+        this.endFloor = endFloor;
+        this.movingDate = movingDate;
+        this.movingStatus = movingStatus;
+        this.useAgreeStatus = useAgreeStatus;
+        this.thirdAgreeStatus = thirdAgreeStatus;
+        this.marketAgreeStatus = marketAgreeStatus;
+    }
 }
