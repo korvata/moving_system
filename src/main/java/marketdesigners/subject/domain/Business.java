@@ -3,9 +3,7 @@ package marketdesigners.subject.domain;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Getter @Setter
@@ -14,6 +12,10 @@ public class Business {
     @Id
     @Column(name = "biz_no")
     private String bizNo;               //사업자번호
+
+    @OneToMany
+    @JoinColumn(name = "feedback_id")
+    private Feedback feedback;          //피드백 정보
 
     @Column(name = "biz_name")
     private String bizName;             //업체명
