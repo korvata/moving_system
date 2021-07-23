@@ -1,3 +1,2 @@
 ## DB설계
-![image](https://user-images.githubusercontent.com/45089402/126778202-be0f2141-b8e6-4fd5-9f25-f4bb02fb16d2.png)
-
+![image](https://user-images.githubusercontent.com/45089402/126778476-a039e08e-10bf-4264-afbb-128fd9775dce.png)
