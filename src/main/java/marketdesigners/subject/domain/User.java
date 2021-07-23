@@ -1,5 +1,6 @@
 package marketdesigners.subject.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,6 +21,7 @@ public class User {
 
     private String tel;                 //연락처
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name="reg_date")
     private LocalDateTime regDate;      //등록일자
 
