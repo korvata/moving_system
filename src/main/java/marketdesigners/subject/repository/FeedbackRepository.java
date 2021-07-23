@@ -15,19 +15,19 @@ public class FeedbackRepository {
     @PersistenceContext
     private EntityManager em;
 
-    public Feedback findOne(Long id){          //사업자번호로 업체정보 조회
+    public Feedback findOne(Long id){          //피드백ID로 업체정보 조회
 
         return em.find(Feedback.class, id);
     }
 
-    public List<Feedback> findAll(){                //업체정보 전체 조회
+    public List<Feedback> findAll(){                //피드백 전체 조회
 
         return em.createQuery("select f from feedback f", Feedback.class)
                 .getResultList();
     }
 
     @Transactional
-    public Long save(Feedback feedback){          //업체정보 저장
+    public Long save(Feedback feedback){          //피드백 저장
 
         em.persist(feedback);
 
