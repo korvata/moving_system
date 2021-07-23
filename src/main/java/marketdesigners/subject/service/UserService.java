@@ -17,4 +17,9 @@ public class UserService {
 
         return userRepository.findAll();
     }
+
+    public int userCount(){                             //전체 고객 정보 수
+
+        return findAll().size();
+    }
 }
