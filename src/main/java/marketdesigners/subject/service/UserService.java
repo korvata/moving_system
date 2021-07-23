@@ -13,7 +13,7 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    public List<User> userList(){                       //고객 전체 조회
+    public List<User> findAll(){                       //고객 전체 조회
 
         return userRepository.findAll();
     }
