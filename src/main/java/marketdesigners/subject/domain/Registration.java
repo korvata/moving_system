@@ -36,19 +36,12 @@ public class Registration {
     @Column(name = "moving_status")
     private Status movingStatus;        //보관이사여부
 
-    @Column(name = "use_agree_status")
-    private Status useAgreeStatus;      //이용약관동의여부
 
-    @Column(name = "third_agree_status")
-    private Status thirdAgreeStatus;    //제3자 동의여부
-
-    @Column(name = "market_agree_status")
-    private Status marketAgreeStatus;   //마케팅 정보수신 동의여부
 
     /**
      * 생성 메서드
      */
-    public Registration(User user, String startAddress, int startFloor, String endAddress, int endFloor, LocalDateTime movingDate, Status movingStatus, Status useAgreeStatus, Status thirdAgreeStatus, Status marketAgreeStatus) {
+    public Registration(User user, String startAddress, int startFloor, String endAddress, int endFloor, LocalDateTime movingDate, Status movingStatus) {
         this.user = user;
         this.startAddress = startAddress;
         this.startFloor = startFloor;
@@ -56,8 +49,5 @@ public class Registration {
         this.endFloor = endFloor;
         this.movingDate = movingDate;
         this.movingStatus = movingStatus;
-        this.useAgreeStatus = useAgreeStatus;
-        this.thirdAgreeStatus = thirdAgreeStatus;
-        this.marketAgreeStatus = marketAgreeStatus;
     }
 }
