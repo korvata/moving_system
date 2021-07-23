@@ -23,12 +23,15 @@ public class Feedback {
     @Column(name = "info_agree")
     private Status infoAgree;      //이용약관동의여부
 
+    @Convert(converter = SatisfactionConverter.class)
     @Column(name = "pro_satisfaction")
     private Satisfaction proSatisfaction;    //전문성 만족도
 
+    @Convert(converter = SatisfactionConverter.class)
     @Column(name = "price_satisfaction")
     private Satisfaction priceSatisfaction;    //가격 만족도
 
+    @Convert(converter = SatisfactionConverter.class)
     @Column(name = "manner_satisfaction")
     private Satisfaction mannerSatisfaction;    //친절 만족도
 
