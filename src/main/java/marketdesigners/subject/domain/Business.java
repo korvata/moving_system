@@ -35,4 +35,20 @@ public class Business {
     private Car car;                    //차량수
 
     private Status status;              //매칭가능여부
+
+
+    /**
+     * 생성 메서드
+     */
+    public Business(String bizNo, Feedback feedback, String bizName, String representative, String tel, String bizRegDate, int employeeNum, Car car, Status status) {
+        this.bizNo = bizNo;
+        this.feedback = feedback;
+        this.bizName = bizName;
+        this.representative = representative;
+        this.tel = tel;
+        this.bizRegDate = bizRegDate;
+        this.employeeNum = employeeNum;
+        this.car = car;
+        this.status = status;
+    }
 }
