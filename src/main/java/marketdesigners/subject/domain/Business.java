@@ -30,9 +30,9 @@ public class Business {
     @Column(name = "employee_num")
     private int employeeNum;            //직원수
 
-    @Convert(converter = CarNumConverter.class)
-    @Column(name = "car_num")
-    private HashMap<CarNum, Integer> carNum;                 //차량수
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @Column(name = "car_id")
+    private Car car;                    //차량수
 
-    private Status status;                                   //매칭가능여부
+    private Status status;              //매칭가능여부
 }
