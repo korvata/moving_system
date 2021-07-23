@@ -2,8 +2,6 @@ package marketdesigners.subject.domain;
 
 import lombok.Getter;
 
-import java.util.Arrays;
-
 @Getter
 public enum Satisfaction {
 
