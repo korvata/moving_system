@@ -22,7 +22,7 @@ public class RegistrationRepository {
 
     public List<Registration> findAll(){                //접수정보 전체 조회
 
-        return em.createQuery("select r from registration r", Registration.class)
+        return em.createQuery("select r from Registration r", Registration.class)
                 .getResultList();
     }
 
