@@ -22,7 +22,7 @@ public class BusinessRepository {
 
     public List<Business> findAll(){                //업체정보 전체 조회
 
-        return em.createQuery("select b from business b", Business.class)
+        return em.createQuery("select b from Business b", Business.class)
                 .getResultList();
     }
 
