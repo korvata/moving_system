@@ -43,16 +43,40 @@ public class User {
     private Status marketAgreeStatus;   //마케팅 정보수신 동의여부
 
     /**
+     * 연관관계 메서드
+     */
+    public void addFeedback(Feedback feedback){
+        feedbacks.add(feedback);
+        feedback.setUser(this);
+    }
+
+    public void addRegistration(Registration registration){
+        registrations.add(registration);
+        registration.setUser(this);
+    }
+
+    /**
      * 생성 메서드
-     *//*
-    public User(String name, String tel, LocalDateTime regDate, List<Feedback> feedbacks, List<Registration> registrations, Status useAgreeStatus, Status thirdAgreeStatus, Status marketAgreeStatus) {
-        this.name = name;
-        this.tel = tel;
-        this.regDate = regDate;
-        this.feedbacks = feedbacks;
-        this.registrations = registrations;
-        this.useAgreeStatus = useAgreeStatus;
-        this.thirdAgreeStatus = thirdAgreeStatus;
-        this.marketAgreeStatus = marketAgreeStatus;
-    }*/
+     */
+
+    public static User createUser(String name, String tel, List<Feedback> feedbacks, List<Registration> registrations){
+
+        User user = new User();
+
+        user.setName(name);
+        user.setTel(tel);
+
+        for(Feedback feedback : feedbacks){
+            user.addFeedback(feedback);
+        }
+
+        for(Registration registration : registrations){
+            user.addRegistration(registration);
+        }
+
+        user.setRegDate(LocalDateTime.now());
+
+        return user;
+
+    }
 }
