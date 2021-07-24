@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +25,7 @@ public class Business {
 
     private String representative;      //대표이사
     private String tel;                 //연락처
+    private String address;             //주소
 
     @Column(name = "business_registration_date")
     private String bizRegDate;          //사업자등록일자
@@ -32,26 +34,38 @@ public class Business {
     private int employeeNum;            //직원수
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "car_id")
     private Car car;                    //차량수
 
     private Status status;              //매칭가능여부
 
 
     /**
+     * 연관관계 메서드
+     */
+    public void addFeedback(Feedback feedback){
+        feedbacks.add(feedback);
+        feedback.setBusiness(this);
+    }
+
+    /**
      * 생성 메서드
-     *//*
-    public static Business createBusiness(String bizNo, List<Feedback> feedbacks, String bizName, String representative, String tel, String bizRegDate, int employeeNum, Car car, Status status) {
+     */public static Business createBusiness(String bizNo, String bizName, String tel, List<Feedback> feedbacks, String bizRegDate, int employeeNum, Status status){
 
+        Business business = new Business();
 
+        business.setBizNo(bizNo);
+        business.setBizName(bizName);
+        business.setTel(tel);
+        business.setBizRegDate(bizRegDate);
+        business.setEmployeeNum(employeeNum);
+        business.setStatus(status);
 
-        this.bizNo = bizNo;
-        this.feedbacks = feedbacks;
-        this.bizName = bizName;
-        this.representative = representative;
-        this.tel = tel;
-        this.bizRegDate = bizRegDate;
-        this.employeeNum = employeeNum;
-        this.car = car;
-        this.status = status;
-    }*/
+        for(Feedback feedback : feedbacks){
+            business.addFeedback(feedback);
+        }
+
+        return business;
+
+    }
 }
