@@ -21,7 +21,7 @@ public class UserRepository {
 
     public List<User> findAll(){                //고객정보 전체 조회
 
-        return em.createQuery("select u from user u", User.class)
+        return em.createQuery("select u from User u", User.class)
                 .getResultList();
     }
 
