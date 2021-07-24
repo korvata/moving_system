@@ -14,7 +14,7 @@ public class Registration {
     @Column(name = "reg_id")
     private Long id;               //신청접수 ID
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;              //고객 정보
 
