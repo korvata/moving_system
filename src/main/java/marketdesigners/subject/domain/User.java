@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -26,12 +28,10 @@ public class User {
     private LocalDateTime regDate;      //등록일자
 
     @OneToMany
-    @JoinColumn(name="feedback_id")
-    private Feedback feedback;          //피드백 정보
+    private List<Feedback> feedbacks = new ArrayList<>();          //피드백 정보
 
     @OneToMany
-    @JoinColumn(name="reg_id")
-    private Registration registration;  //신청접수 정보
+    private List<Registration> registrations = new ArrayList<>();  //신청접수 정보
 
     @Column(name = "use_agree_status")
     private Status useAgreeStatus;      //이용약관동의여부
@@ -44,15 +44,15 @@ public class User {
 
     /**
      * 생성 메서드
-     */
-    public User(String name, String tel, LocalDateTime regDate, Feedback feedback, Registration registration, Status useAgreeStatus, Status thirdAgreeStatus, Status marketAgreeStatus) {
+     *//*
+    public User(String name, String tel, LocalDateTime regDate, List<Feedback> feedbacks, List<Registration> registrations, Status useAgreeStatus, Status thirdAgreeStatus, Status marketAgreeStatus) {
         this.name = name;
         this.tel = tel;
         this.regDate = regDate;
-        this.feedback = feedback;
-        this.registration = registration;
+        this.feedbacks = feedbacks;
+        this.registrations = registrations;
         this.useAgreeStatus = useAgreeStatus;
         this.thirdAgreeStatus = thirdAgreeStatus;
         this.marketAgreeStatus = marketAgreeStatus;
-    }
+    }*/
 }

@@ -37,10 +37,17 @@ public class Registration {
     private Status movingStatus;        //보관이사여부
 
 
+    /**
+     * 연관 관계 메서드
+     */
+    public void setUser(User user){
+        this.user = user;
+        user.getRegistrations().add(this);
+    }
 
     /**
      * 생성 메서드
-     */
+     *//*
     public Registration(User user, String startAddress, int startFloor, String endAddress, int endFloor, LocalDateTime movingDate, Status movingStatus) {
         this.user = user;
         this.startAddress = startAddress;
@@ -49,5 +56,5 @@ public class Registration {
         this.endFloor = endFloor;
         this.movingDate = movingDate;
         this.movingStatus = movingStatus;
-    }
+    }*/
 }

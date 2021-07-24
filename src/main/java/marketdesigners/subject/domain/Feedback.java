@@ -20,6 +20,10 @@ public class Feedback {
     @JoinColumn(name = "user_id")
     private User user;              //고객 정보
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "business_id")
+    private Business business;              //고객 정보
+
     @Column(name = "info_agree")
     private Status infoAgree;      //이용약관동의여부
 
@@ -50,8 +54,22 @@ public class Feedback {
     private String contents;                     //피드백 내용
 
     /**
-     * 생성 메서드
+     * 연관 관계 메서드
      */
+    public void setUser(User user){
+        this.user = user;
+        user.getFeedbacks().add(this);
+    }
+
+    public void setBusiness(Business business){
+        this.business = business;
+        business.getFeedbacks().add(this);
+    }
+
+
+    /**
+     * 생성 메서드
+     *//*
     public Feedback (User user, Status infoAgree, Satisfaction proSatisfaction, Satisfaction priceSatisfaction, Satisfaction mannerSatisfaction, Status revisit, int price, LocalDateTime movingDate, LocalDateTime feedbackDate, String contents) {
         this.user = user;
         this.infoAgree = infoAgree;
@@ -63,5 +81,5 @@ public class Feedback {
         this.movingDate = movingDate;
         this.feedbackDate = feedbackDate;
         this.contents = contents;
-    }
+    }*/
 }
