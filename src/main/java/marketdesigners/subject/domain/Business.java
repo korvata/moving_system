@@ -17,7 +17,7 @@ public class Business {
     @Column(name = "biz_no")
     private String bizNo;               //사업자번호
 
-    @OneToMany(mappedBy = "business", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "business")
     private List<Feedback> feedbacks = new ArrayList<>();          //피드백 정보
 
     @Column(name = "biz_name")
@@ -50,13 +50,14 @@ public class Business {
 
     /**
      * 생성 메서드
-     */public static Business createBusiness(String bizNo, String bizName, String tel, List<Feedback> feedbacks, String bizRegDate, int employeeNum, Status status){
+     */public static Business createBusiness(String bizNo, String bizName, String tel, String address, List<Feedback> feedbacks, String bizRegDate, int employeeNum, Status status){
 
         Business business = new Business();
 
         business.setBizNo(bizNo);
         business.setBizName(bizName);
         business.setTel(tel);
+        business.setAddress(address);
         business.setBizRegDate(bizRegDate);
         business.setEmployeeNum(employeeNum);
         business.setStatus(status);

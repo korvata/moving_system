@@ -27,10 +27,10 @@ public class User {
     @Column(name="reg_date")
     private LocalDateTime regDate;      //등록일자
 
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     private List<Feedback> feedbacks = new ArrayList<>();          //피드백 정보
 
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     private List<Registration> registrations = new ArrayList<>();  //신청접수 정보
 
     @Column(name = "use_agree_status")
