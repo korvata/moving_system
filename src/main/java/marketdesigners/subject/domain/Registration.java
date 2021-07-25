@@ -31,7 +31,7 @@ public class Registration {
     private int endFloor;           //도착지 층수
 
     @Column(name = "moving_date")
-    private LocalDateTime movingDate;   //이사일자
+    private String movingDate;   //이사일자
 
     @Column(name = "moving_status")
     private Status movingStatus;        //보관이사여부
@@ -47,14 +47,19 @@ public class Registration {
 
     /**
      * 생성 메서드
-     *//*
-    public Registration(User user, String startAddress, int startFloor, String endAddress, int endFloor, LocalDateTime movingDate, Status movingStatus) {
-        this.user = user;
-        this.startAddress = startAddress;
-        this.startFloor = startFloor;
-        this.endAddress = endAddress;
-        this.endFloor = endFloor;
-        this.movingDate = movingDate;
-        this.movingStatus = movingStatus;
-    }*/
+     */
+        public static Registration createRegistration(User user, String startAddress, int startFloor, String endAddress, int endFloor, String movingDate, Status movingStatus) {
+
+            Registration registration = new Registration();
+
+            registration.setUser(user);
+            registration.setStartAddress(startAddress);
+            registration.setStartFloor(startFloor);
+            registration.setEndAddress(endAddress);
+            registration.setEndFloor(endFloor);
+            registration.setMovingDate(movingDate);
+            registration.setMovingStatus(movingStatus);
+
+            return registration;
+        }
 }
