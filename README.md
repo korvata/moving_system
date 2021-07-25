@@ -46,7 +46,6 @@ create table business (
     )
 	
     insert into hibernate_sequence values ( 1 )
-Hibernate: 
     
     create table registration (
        reg_id bigint not null,
