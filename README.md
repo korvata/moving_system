@@ -3,18 +3,18 @@
 
 # 2. 셋팅법
 ## DDL
-create table business (
-       biz_no varchar(255) not null,
-        address varchar(255),
-        biz_name varchar(255),
-        business_registration_date varchar(255),
-        employee_num integer,
-        representative varchar(255),
-        status integer,
-        tel varchar(255),
-        car_id bigint,
-        primary key (biz_no)
-    )
+	create table business (
+	       biz_no varchar(255) not null,
+		address varchar(255),
+		biz_name varchar(255),
+		business_registration_date varchar(255),
+		employee_num integer,
+		representative varchar(255),
+		status integer,
+		tel varchar(255),
+		car_id bigint,
+		primary key (biz_no)
+	    )
     
     create table car (
        car_id bigint not null,
