@@ -45,7 +45,7 @@ public class Feedback {
     private int price;                          //계약가격
 
     @Column(name = "moving_date")
-    private LocalDateTime movingDate;           //이사일
+    private String movingDate;           //이사일
 
     @Column(name = "feedback_date")
     private LocalDateTime feedbackDate;         //피드백 작성일
@@ -69,17 +69,22 @@ public class Feedback {
 
     /**
      * 생성 메서드
-     *//*
-    public Feedback (User user, Status infoAgree, Satisfaction proSatisfaction, Satisfaction priceSatisfaction, Satisfaction mannerSatisfaction, Status revisit, int price, LocalDateTime movingDate, LocalDateTime feedbackDate, String contents) {
-        this.user = user;
-        this.infoAgree = infoAgree;
-        this.proSatisfaction = proSatisfaction;
-        this.priceSatisfaction = priceSatisfaction;
-        this.mannerSatisfaction = mannerSatisfaction;
-        this.revisit = revisit;
-        this.price = price;
-        this.movingDate = movingDate;
-        this.feedbackDate = feedbackDate;
-        this.contents = contents;
-    }*/
+     */
+    public static Feedback createFeedback(User user, Status infoAgree, Satisfaction proSatisfaction, Satisfaction priceSatisfaction, Satisfaction mannerSatisfaction, Status revisit, int price, String movingDate, String contents) {
+
+        Feedback feedback = new Feedback();
+
+        feedback.setUser(user);
+        feedback.setInfoAgree(infoAgree);
+        feedback.setPriceSatisfaction(proSatisfaction);
+        feedback.setPriceSatisfaction(priceSatisfaction);
+        feedback.setMannerSatisfaction(mannerSatisfaction);
+        feedback.setRevisit(revisit);
+        feedback.setPrice(price);
+        feedback.setFeedbackDate(LocalDateTime.now());
+        feedback.setMovingDate(movingDate);
+        feedback.setContents(contents);
+
+        return feedback;
+    }
 }
