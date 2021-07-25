@@ -120,5 +120,19 @@ insert into marketdesigners.registration values(3, "경기도 시흥시 장곡�
 insert into marketdesigners.registration values(4, "서울 강남구 서초동 블라블라", 3, "2021-09-11", 1, "서울 송파구 와동 어쩌구저쩌구", 23, 4);
 
 # 3. 테스트 및 Run
+## 고객 정보 조회
+![image](https://user-images.githubusercontent.com/45089402/126888841-bb95f164-0a45-4eed-816f-e84baa5d6eb8.png)
+
+## 이사업체 정보 조회
+![image](https://user-images.githubusercontent.com/45089402/126888853-fa63e458-e01b-46e7-8c1d-095819ab84ff.png)
+
+
+## 접수 정보 조회
+
 
 # 4. 사용한 패키지
+
+Domain : 엔티티 저장
+Repository : JPA 사용
+Service : 비즈니스 로직 구현
+Controller : API 
